@@ -417,13 +417,13 @@ node_ram_cache::~node_ram_cache()
 
 void node_ram_cache::set(osmid_t id, const osmium::Location &coord)
 {
-    if ((id > 0 && id >> BLOCK_SHIFT >> 32) ||
+   /* if ((id > 0 && id >> BLOCK_SHIFT >> 32) ||
         (id < 0 && ~id >> BLOCK_SHIFT >> 32)) {
         fprintf(stderr, "\nAbsolute node IDs must not be larger than %" PRId64
                         " (got%" PRId64 " )\n",
                 (int64_t)1 << 42, (int64_t)id);
         util::exit_nicely();
-    }
+    }*/
     totalNodes++;
     /* if ALLOC_DENSE and ALLOC_SPARSE are set, send it through
    * ram_nodes_set_dense. If a block is non dense, it will automatically
